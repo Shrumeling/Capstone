@@ -11,24 +11,59 @@
         <main>
             <nav>
                 <a href="../index.html">Home</a>
+                <label for="volume">Volume:</label>
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="0.2">
             </nav>
             <div class="terminal-img">
                 <img 
                     src="../media/Playback - 2.jpg"
-                    alt="A satellite terminal for pinpointing found signals."
+                    alt="A terminal for playing found signals."
                     width="1200"
                     height="666"
+                    class="terminal-image"
                 >
+                <div id="visualizer">
+                    <img id="visualizer-img" src="" alt="Audio Visualizer" width="550px" height="280px">
+                </div>
                 <div class="terminal-button">
-                    <button onclick="window.location.href='../Pages/terminal-2.html';">
-                        Re-align Sattelites
-                    </button>
-                    <button onclick="window.location.href='../index.html';">
-                        Return
-                    </button>
+                    <button onclick="playSound('../media/venus.mp3', '../media/venus_visualizer.png')">Venus</button>
+                    <button onclick="playSound('../media/bennu.mp3', '../media/bennu_visualizer.png')">Bennu</button>
+                    <button onclick="playSound('../media/lapetus_0.mp3', '../media/lapetus_0_visualizer.png')">Lapetus</button>
+                    <button onclick="window.location.href='../index.html';">Home</button>
                 </div>
             </div>
         </main>
         <footer></footer>
+        <script>
+            let audio;
+            let visualizer = document.getElementById("visualizer");
+            let visualizerImg = document.getElementById("visualizer-img");
+            let volumeControl = document.getElementById("volume");
+
+            function playSound(audioFile, gifFile) {
+            if (audio && !audio.paused) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+
+            audio = new Audio(audioFile);
+            audio.volume = volumeControl.value;
+            audio.play();
+
+            visualizerImg.src = gifFile;
+            visualizer.style.display = "block";
+
+            audio.onended = () => {
+                visualizer.style.display = "none";
+                visualizerImg.src = "";
+            };
+            }
+
+            volumeControl.addEventListener("input", () => {
+            if (audio) {
+                audio.volume = volumeControl.value;
+            }
+            });
+        </script>
     </body>
 </html>

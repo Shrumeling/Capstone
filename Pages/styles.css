@@ -20,7 +20,7 @@ body {
     /* display: flex;
     flex-wrap: wrap;
     justify-content: center; */
-    margin: 20px 0;
+    margin: 15px 0;
     /* padding-bottom: 20px; */
     padding: 20px;
     background: linear-gradient(to right, rgba(57, 0, 78, 0.353), rgba(57, 0, 78, 0));
@@ -76,6 +76,11 @@ nav {
     border: 2px solid #00cf006d;
 }
 
+.about-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
 section p {
     font-weight: bold
 }
@@ -120,21 +125,20 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vh;
+    height: 36vh;
     width: auto;
 }
 
 .item-1 {
     display: flex;
-    height: 180px;
+    height: 181px;
     width: 300px;
-    margin: 40px 0;
     padding: 20px;
-    border-top: 5px dashed #00cf006d;
-    border-bottom: 5px dashed #00cf006d;
-    border-left: 4px dashed #00cf006d;
-    border-right: 4px dashed #00cf006d;
-    /* border: 5px dashed #00cf006d; */
+    /* border-top: 6px solid #00cf006d;
+    border-bottom: 6px solid #00cf006d;
+    border-left: 4px solid #00cf006d;
+    border-right: 4px solid #00cf006d; */
+    /* border: 2px solid #00cf006d; */
     flex-basis: 33%;
     flex-wrap: wrap;
     align-items: center;
@@ -163,6 +167,7 @@ section {
 }
 
 .terminal-button {
+    width: -webkit-fill-available;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -178,10 +183,54 @@ section {
 
 .about-para {
     height: auto;
-    width: 800px;
-    display: flex;
+    max-width: 1000px;
+    display: block;
     /* text-align: center; */
     border: 1px solid #00ff00;
     background: linear-gradient(to right, rgba(57, 0, 78, 0.697), rgba(57, 0, 78, 0));
     margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 28px;
+    line-height: 1.4;
 }
+.about-para p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pancake {
+    text-indent: 5%;
+}
+
+/* #visualizer {
+    display: none;
+    margin-top: 10px;
+} */
+
+.terminal-container {
+    position: relative; /* base for absolute children */
+    display: inline-block; /* shrink to image size */
+}
+
+.terminal-image {
+    /* width: 600px; */
+    display: block;
+}
+
+#visualizer {
+    position: absolute;
+    top: 57%;
+    left: 4%; 
+    display: none;
+    pointer-events: none; /* so clicks go through */
+    border-radius: 9%;   /* makes it circular */
+    /* overflow: hidden; */
+    border-radius: 20px;
+    border: 5px solid black; /* neon frame look */
+    box-shadow: 0 0 10px black; /* glowing effect */
+}
+
+/* nav p {
+    display: flex;
+
+} */
