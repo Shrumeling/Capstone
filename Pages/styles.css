@@ -199,7 +199,9 @@ section {
 }
 
 .pancake {
-    text-indent: 5%;
+    padding-left: 5%;
+    padding-bottom: 2%;
+    /* text-indent: 5%; */
 }
 
 /* #visualizer {
