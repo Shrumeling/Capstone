@@ -168,3 +168,20 @@ section {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.about-body {
+    background-image: url("../media/About.png");
+    background-size: 88%;
+    background-position-x: center;
+    background-position-y: -62px;
+}
+
+.about-para {
+    height: auto;
+    width: 800px;
+    display: flex;
+    /* text-align: center; */
+    border: 1px solid #00ff00;
+    background: linear-gradient(to right, rgba(57, 0, 78, 0.697), rgba(57, 0, 78, 0));
+    margin: 0 auto;
+}
