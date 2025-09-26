@@ -68,6 +68,7 @@ nav{
 }
 
 .about-nav{
+    padding: 0 1%;
     display: flex;
     justify-content: space-between;
 }
@@ -171,7 +172,6 @@ section{
 }
 
 .terminal-image{
-    /* width: 600px; */
     display: block;
 }
 
